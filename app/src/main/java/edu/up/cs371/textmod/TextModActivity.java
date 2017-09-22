@@ -16,19 +16,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.EditText;
-
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 public class TextModActivity extends ActionBarActivity {
-    private Button upper;
-    private EditText text;
 
     // array-list that contains our images to display
     private ArrayList<Bitmap> images;
@@ -41,15 +33,10 @@ public class TextModActivity extends ActionBarActivity {
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         // perform superclass initialization; load the layout
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text_mod);
-
-
-        upper = (Button) findViewById(R.id.upper);
-        text = (EditText) findViewById(R.id.editText);
-
-
 
         // set instance variables for our widgets
         imageView = (ImageView)findViewById(R.id.imageView);
@@ -87,23 +74,6 @@ public class TextModActivity extends ActionBarActivity {
         spinner.setOnItemSelectedListener(new MySpinnerListener());
 
     }
-
-
-
-    public void upperCase(View v){
-
-
-
-                text.setText(text.getText().toString().toUpperCase());
-
-
-
-
-    }
-
-
-
-
 
     /**
      * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
