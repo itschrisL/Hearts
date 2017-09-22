@@ -16,15 +16,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import java.util.ArrayList;
-
-import static edu.up.cs371.textmod.R.id.button;
-import static edu.up.cs371.textmod.R.id.editText;
-
 
 public class TextModActivity extends ActionBarActivity {
 
@@ -33,9 +28,8 @@ public class TextModActivity extends ActionBarActivity {
 
     // instance variables containing widgets
     private ImageView imageView; // the view that shows the image
-
-    Button clrButton;
-    EditText txtLine;
+    private Spinner spinner = (Spinner) findViewById(R.id.spinner);
+    private EditText editText = (EditText) findViewById(R.id.editText);
 
     /**
      * @see android.app.Activity#onCreate(android.os.Bundle)
@@ -53,7 +47,7 @@ public class TextModActivity extends ActionBarActivity {
         // Set up the spinner so that it shows the names in the spinner array resources
         //
         // get spinner object
-        Spinner spinner = (Spinner)findViewById(R.id.spinner);
+        spinner = (Spinner)findViewById(R.id.spinner);
         // get array of strings
         String[] spinnerNames = getResources().getStringArray(R.array.spinner_names);
         // create adapter with the strings
@@ -82,13 +76,10 @@ public class TextModActivity extends ActionBarActivity {
         // define a listener for the spinner
         spinner.setOnItemSelectedListener(new MySpinnerListener());
 
-        clrButton= (Button) findViewById(R.id.button);
-        txtLine= (EditText) findViewById(R.id.editText);
-
     }
-
-    public void clrOnClick(View v){
-        txtLine.setText(" ");
+    public void onCopyText(){
+        String textToAdd = editText.getText().toString();
+        spinner.setPrompt(textToAdd + editText.getText().toString());
     }
 
     /**
