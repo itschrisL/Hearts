@@ -11,6 +11,7 @@
         <item>@mipmap/vegdahl</item>
         <item>@mipmap/me</item>
         <item>@mipmap/emma</item>
+        <item>@mipmap/lindsey</item>
     </array>
 
     <string-array name="spinner_names">
@@ -19,6 +20,7 @@
         <item>Dr. Steven Vegdahl</item>
         <item>me</item>
         <item>Marylin</item>
+        <item>Lindsey Lavee</item>
     </string-array>
 
 </resources>
