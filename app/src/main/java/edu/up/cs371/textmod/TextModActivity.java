@@ -162,4 +162,4 @@ public class TextModActivity extends ActionBarActivity {
         }
         inItGoes.setText(sb.toString());
     }
-}
+}//
