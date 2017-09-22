@@ -40,6 +40,8 @@ public class TextModActivity extends ActionBarActivity {
     Button clrButton;
     EditText txtLine;
 
+    Spinner spinner = (Spinner)findViewById(R.id.spinner);
+
     /**
      * @see android.app.Activity#onCreate(android.os.Bundle)
      */
@@ -56,7 +58,7 @@ public class TextModActivity extends ActionBarActivity {
         // Set up the spinner so that it shows the names in the spinner array resources
         //
         // get spinner object
-        Spinner spinner = (Spinner)findViewById(R.id.spinner);
+        spinner = (Spinner)findViewById(R.id.spinner);
         // get array of strings
         String[] spinnerNames = getResources().getStringArray(R.array.spinner_names);
         // create adapter with the strings
@@ -162,4 +164,11 @@ public class TextModActivity extends ActionBarActivity {
         }
         inItGoes.setText(sb.toString());
     }
+
+    public void copyTextToSpinner(){
+        String copied_texted = txtLine.getText().toString();
+
+        spinner.setPrompt(copied_texted + txtLine.getText().toString());
+    }
 }
+
