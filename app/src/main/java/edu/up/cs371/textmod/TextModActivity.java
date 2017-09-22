@@ -16,9 +16,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import java.util.ArrayList;
+import java.lang.StringBuffer;
+import java.util.Stack;
 
 public class TextModActivity extends ActionBarActivity {
 
@@ -127,5 +130,20 @@ public class TextModActivity extends ActionBarActivity {
         public void onNothingSelected(AdapterView<?> parentView) {
             // your code here
         }
+    }
+
+    public void switcheroo(View v){
+        EditText inItGoes = (EditText)findViewById(R.id.editText);
+        String content = inItGoes.getText().toString();
+
+        Stack<Character> letters = new Stack<Character>();
+        for(char c:content.toCharArray()) {
+            letters.push(c);
+        }
+        StringBuilder sb = new StringBuilder();
+        while(!letters.empty()) {
+            sb.append(letters.pop());
+        }
+        inItGoes.setText(sb.toString());
     }
 }
