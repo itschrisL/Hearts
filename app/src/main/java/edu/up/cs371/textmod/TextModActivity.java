@@ -145,5 +145,5 @@ public class TextModActivity extends ActionBarActivity {
             sb.append(letters.pop());
         }
         inItGoes.setText(sb.toString());
-    }
+    }//lala
 }
